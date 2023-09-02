@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Organized Groceries:</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='results.css') }}"/>
+  </head>
+  <body>
+    <h2>Organized Groceries</h2>
+    <ul>
+      {% for item in sorted_list_no_ranks %}
+        <li>{{ item }}</li>
+      {% endfor %}
+    </ul>
+    <p>To edit this list, please use the back button at the top left of your browser.</p>
+    <a href="{{ url_for('index') }}">Create new list</a>
+    <h3>Items we had trouble sorting:</h3>
+    <ul>
+      {% for item in extra_items %}
+        <li>{{ item }}</li>
+      {% endfor %}
+    </ul>
+    <p><br>When entering your grocery list, please press enter after each item.<br>
+      Please do not number your list or use uppercase letters.<br>
+      If using brand names that aren't found, try adding the general name of the food as well, for example:<br>
+      Instead of "oreos", type "oreo cookies."</p>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Grocery List Organizer</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}"/>
+  </head>
+  <body>
+    <h1>Grocery Organizer</h1>
+    <p>Organizes your grocery list into a general order based on ShopRite aisle layouts.</p>
+    <form action="{{ url_for('organize') }}" method="post">
+      <label for="grocery_list"><b>Enter your list here:</b></label>
+      <textarea name="grocery_list" id="grocery_list"></textarea>
+      <br>
+      <input type="submit" value="Organize">
+      <p><br>When entering your grocery list, please press enter after each item.<br>
+        Please do not number your list or use uppercase letters.<br>
+        If using brand names that aren't found, try adding the general name of the food as well, for example:<br>
+        Instead of "oreos", type "oreo cookies."</p>
+    </form>
+  </body>
+</html>
